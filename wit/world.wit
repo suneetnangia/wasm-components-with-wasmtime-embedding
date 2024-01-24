@@ -1,0 +1,7 @@
+package component:transformer;
+
+/// An example of transformer world
+world transformer {
+    import convert-to-psi: func(bar-pressure: f32) -> f32;
+    export run: func(source: string) -> f32;
+}

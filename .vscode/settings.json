@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "bindgen",
+        "clefinda",
+        "Initialising",
+        "Mqtt",
+        "Pollable",
+        "preopens",
+        "wasi",
+        "wasmtime"
+    ],
+    "rust-analyzer.linkedProjects": [                
+        "Cargo.toml",
+        "./components/transformer/Cargo.toml"
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": false
+}
