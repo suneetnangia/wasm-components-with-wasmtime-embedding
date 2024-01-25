@@ -24,7 +24,7 @@ fn main() -> wasmtime::Result<()> {
     config.wasm_component_model(true);
     
     let engine = Engine::new(&config)?;
-    let component = Component::from_file(&engine, "/home/vmadmin/repos/standalone-wasmtime-runtime/target/wasm32-wasi/release/transformer.wasm")?;
+    let component = Component::from_file(&engine, "target/wasm32-wasi/release/transformer.wasm")?;
     // let component = Component::from_file(&engine, "/home/vmadmin/repos/standalone-wasmtime-runtime/target/wasm32-wasi/release/add1.wasm")?;    
 
     // Instantiation of bindings always happens through a `Linker`.

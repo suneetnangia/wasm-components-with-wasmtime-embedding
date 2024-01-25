@@ -1,10 +1,20 @@
-# A Simple Program to Demonstrate Wasm Components with Wasmtime Embeddings
+# A Simple Rust Program to Demonstrate Web Assembly (Wasm) Components with Wasmtime Embeddings
 
-## Common Cmds
+A repo to demo how we can make use of Wasm component model in a host program which embeds Wasmtime. We indent to provide host programs in Rust and GoLang initially.
 
-Command to build transformer component and verify it's WIT imports/exports.
+The repo provides an accelerator to execute wasm components as part of a larger project/solution e.g. running wasm component in a data pipeline solution which is written in Rust or GoLang.
 
-`cargo component build --release && wasm-tools component wit /home/vmadmin/repos/standalone-wasmtime-runtime/target/wasm32-wasi/release/transformer.wasm`
+## Dev Setup
 
+The repo makes use of Dev container for building and trying the accelerator.
 
-... flesh out the details.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/suneetnangia/wasm-components-with-wasmtime-embedding)
+
+## How to Build/Run
+
+Run `make` in terminal at root of the project.
+
+## TODOs
+
+1. Enable standard WASI 2 preview imports in wasm component when required.
+2. Add GoLang version of host with wasmtime embedding.
