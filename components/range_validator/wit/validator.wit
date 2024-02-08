@@ -1,0 +1,13 @@
+package data:validator;
+
+world validator {
+    // Exports should be available to host when wasm component is loaded.
+    // It is wasm component's responsibility to provide these exported functions/interfaces to the host, which host can call.
+    /// Entry point for wasm component.
+    export unit-validator;
+}
+
+interface unit-validator {
+    validate-bar: func(val: f32) -> bool;
+    validate-psi: func(val: f32) -> bool;
+}

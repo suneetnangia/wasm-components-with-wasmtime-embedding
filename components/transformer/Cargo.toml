@@ -12,9 +12,12 @@ cargo-component-bindings = "0.6.0"
 crate-type = ["cdylib"]
 
 [package.metadata.component]
-package = "transformer:component"
+package = "component:transformer"
 
 [package.metadata.component.target]
 path = "../../wit"
+world = "transformer" # this is optional if only one world is present at the location.
 
-[package.metadata.component.dependencies]
+# [package.metadata.component.dependencies]
+[package.metadata.component.target.dependencies]
+"data:validator" = { path = "../range_validator/wit" }

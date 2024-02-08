@@ -1,4 +1,4 @@
-workspace = { members = ["components/transformer"] }
+workspace = { members = ["components/range_validator","components/transformer"] }
 [package]
 name = "standalone-wasmtime-runtime"
 version = "0.1.0"
@@ -10,6 +10,3 @@ edition = "2021"
 anyhow = "1.0.75"
 wasmtime = { version = "16.0.0", features =['component-model', 'async', 'default', 'winch', 'debug-builtins'] }
 wasmtime-wasi = {version = "*"}
-
-# [package.metadata.component.target.dependencies]
-# "wasi:io" = { path = "../wit" }  # directory containing the WIT package

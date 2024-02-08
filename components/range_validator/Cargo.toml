@@ -1,0 +1,22 @@
+[package]
+name = "rangevalidator"
+description = "It's library component, which is used by other components usually."
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo-component-bindings = "0.6.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.component]
+package = "data:validator"
+
+[package.metadata.component.target]
+path = "wit/validator.wit"
+world = "validator" # this is optional if only one world is present at the location.
+
+[package.metadata.component.dependencies]
