@@ -29,7 +29,7 @@ fn main() -> wasmtime::Result<()> {
     // config.async_support(true);
 
     let engine = Engine::new(&config)?;
-    let component = Component::from_file(&engine, "composed.wasm")?;
+    let component = Component::from_file(&engine, "target/wasm32-wasi/release/composedtransformer.wasm")?;
 
     // Instantiation of bindings always happens through a `Linker`.
     // Configuration of the linker is done through a generated `add_to_linker`

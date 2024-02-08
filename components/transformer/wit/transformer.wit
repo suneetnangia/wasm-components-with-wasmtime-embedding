@@ -7,6 +7,10 @@ world transformer {
     /// Converts pressure from bar to psi unit. Connecting one component's imports to another component's matching exports is called composition.
     import message-transformers;
     
+    // Import library component in this world.
+    // TODO: This however fails main/host as it cannot find the deps, possibly split interfaces so they can be used in different worlds i.e. one for 
+    import data:validator/unit-validator;
+
     // Exports should be available to host when wasm component is loaded.
     // It is wasm component's responsibility to provide these exported functions/interfaces to the host, which host can call.
     /// Entry point for wasm component.
