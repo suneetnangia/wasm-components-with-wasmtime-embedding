@@ -1,4 +1,4 @@
-workspace = { members = ["components/range_validator","components/transformer"] }
+workspace = { members = ["components/range_validator", "components/transformer", "modules/wasm"] }
 [package]
 name = "standalone-wasmtime-runtime"
 version = "0.1.0"
