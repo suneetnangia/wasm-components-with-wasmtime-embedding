@@ -4,6 +4,8 @@ A repo to demo how we can make use of Wasm component model in a host program whi
 
 The repo provides an accelerator to execute wasm components as part of a larger project/solution e.g. running wasm component in a data pipeline solution which is written in Rust or GoLang.
 
+![Main Design](images/main_design.png)
+
 ## Dev Setup
 
 The repo makes use of Dev container for building and trying the accelerator.

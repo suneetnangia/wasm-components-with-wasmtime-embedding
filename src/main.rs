@@ -1,4 +1,3 @@
-use wasmtime_wasi::preview2;
 // https://docs.rs/wasmtime/latest/wasmtime/component/macro.bindgen.html
 use anyhow::Ok;
 use wasmtime::component::*;
