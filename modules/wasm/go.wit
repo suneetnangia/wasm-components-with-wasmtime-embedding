@@ -1,0 +1,6 @@
+package module:go;
+
+world transformer {
+    import add: func(a: s32, b: s32) -> s32;
+    export run: func(a: s32, b: s32) -> s32;
+}
