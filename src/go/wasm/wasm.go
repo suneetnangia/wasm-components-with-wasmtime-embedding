@@ -1,4 +1,4 @@
-package wat
+package wasm
 
 import (
 	"fmt"
@@ -12,11 +12,11 @@ func add(a int32, b int32) int32 {
 	return a + b
 }
 
-func ProcessWat() {
+func ProcessWasm() {
 	// Configure the initial compilation environment.
 	engine := wasmtime.NewEngine()
 
-	module, err := wasmtime.NewModuleFromFile(engine, "../../target/wasm32-wasi/release/composedtransformer.wasm")
+	module, err := wasmtime.NewModuleFromFile(engine, "../../target/wasm32-wasi/release/wasm.wasm")
 	if err != nil {
 		log.Fatal(err)
 	}
