@@ -7,11 +7,16 @@ import (
 	"github.com/bytecodealliance/wasmtime-go"
 )
 
+func add(a int32, b int32) int32 {
+	fmt.Println("Callback for function 'add'...")
+	return a + b
+}
+
 func ProcessWat() {
 	// Configure the initial compilation environment.
 	engine := wasmtime.NewEngine()
 
-	module, err := wasmtime.NewModuleFromFile(engine, "../../target/wasm32-wasi/release/wasm.wasm")
+	module, err := wasmtime.NewModuleFromFile(engine, "../../target/wasm32-wasi/release/composedtransformer.wasm")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,15 +26,12 @@ func ProcessWat() {
 
 	// Here we handle the imports of the module, which in this case is our
 	// `helloFunc` callback.
-	helloFunc := wasmtime.WrapFunc(store, func(a int32, b int32) int32 {
-		fmt.Println("Callback for function 'add'...")
-		return a + b
-	})
+	addCallback := wasmtime.WrapFunc(store, add)
 
 	// Once we've got that all set up we can then move to the instantiation
 	// phase, pairing together a compiled module as well as a set of imports.
 	// Note that this is where the wasm `start` function, if any, would run.
-	instance, err := wasmtime.NewInstance(store, module, []wasmtime.AsExtern{helloFunc})
+	instance, err := wasmtime.NewInstance(store, module, []wasmtime.AsExtern{addCallback})
 	if err != nil {
 		log.Fatal(err)
 	}
