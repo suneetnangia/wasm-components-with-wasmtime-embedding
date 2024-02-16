@@ -1,4 +1,4 @@
-package wasm
+package wasmrunner
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ func add(a int32, b int32) int32 {
 	return a + b
 }
 
-func ProcessWasm() {
+func RunWasm() {
 	// Configure the initial compilation environment.
 	engine := wasmtime.NewEngine()
 
