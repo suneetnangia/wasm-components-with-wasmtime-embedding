@@ -1,7 +1,7 @@
 package main
 
-import "wasm-components-with-wasmtime-embedding/go/wasm"
+import "wasm-components-with-wasmtime-embedding/go/wasm-runner"
 
 func main() {
-	wasm.ProcessWasm()
+	wasmrunner.RunWasm()
 }
