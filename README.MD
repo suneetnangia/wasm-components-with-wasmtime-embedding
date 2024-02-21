@@ -19,4 +19,4 @@ Run `make` in terminal at root of the project.
 ## TODOs
 
 1. Enable standard WASI 2 preview imports in wasm component when required.
-2. Add GoLang version of host with wasmtime embedding.
+2. Change GoLang host to load wasm components (instead of modules) when it will be supported in wasmtime-go.
